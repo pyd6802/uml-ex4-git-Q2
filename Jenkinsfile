@@ -3,10 +3,19 @@ podTemplate(containers: [
      name:'maven',
      image: 'maven:3.8.1-jdk-8',
      command: 'sleep',
-     args: '30d', 
-	       '-v $HOME/.m2:/root/.m2'
-     ),
-   ]) {
+     args: '30d'
+     )
+   ],
+   
+   volumes: [
+    persistentVolumeClaim(
+      mountPath: '/root/.m2/repository', 
+      claimName: 'jenkins-data', 
+      readOnly: false
+      )
+   ]) 
+   
+   {
    node(POD_LABEL) {
        stage('Get a Maven project') {
            git 'https://github.com/pyd6802/uml-ex4-git-Q2.git'
