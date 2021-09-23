@@ -3,7 +3,8 @@ podTemplate(containers: [
      name:'maven',
      image: 'maven:3.8.1-jdk-8',
      command: 'sleep',
-     args: '30d'
+     args: '30d', 
+	       '-v $HOME/.m2:/root/.m2'
      ),
    ]) {
    node(POD_LABEL) {
