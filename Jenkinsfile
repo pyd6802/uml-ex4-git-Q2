@@ -14,8 +14,8 @@ podTemplate(containers: [
 
     node(POD_LABEL) {
         stage('Get a Maven project') {
-            git 'https://github.com/spring-projects/spring-petclinic.git'
-            container('maven') {
+		    git 'https://github.com/pyd6802/uml-ex4-git-Q2.git'
+                container('maven') {
                 stage('Build a Maven project') {
                     sh '''
                     echo "maven build"
@@ -24,10 +24,11 @@ podTemplate(containers: [
             }
         }
 
-        stage('Get a Python Project') {
-            git url: 'https://github.com/hashicorp/terraform.git', branch: 'main'
-            container('python') {
-                stage('Build a Go project') {
+        stage('Get a Python Project') { {
+#            git 'https://github.com/pyd6802/uml-ex4-git-Q2.git'         
+#	        container('python') {
+                
+				stage('Build a Go project') {
                     sh '''
                     echo "Go Build"
                     '''
