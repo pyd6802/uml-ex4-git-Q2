@@ -25,8 +25,8 @@ podTemplate(containers: [
         }
 
         stage('Get a Python Project') { {
-#            git 'https://github.com/pyd6802/uml-ex4-git-Q2.git'         
-#	        container('python') {
+ #            git 'https://github.com/pyd6802/uml-ex4-git-Q2.git'         
+         container('python') {
                 
 				stage('Build a Go project') {
                     sh '''
