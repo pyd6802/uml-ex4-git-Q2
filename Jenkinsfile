@@ -22,7 +22,7 @@ podTemplate(containers: [
            container('maven') {
                stage('Build a Maven project') {
                    sh '''
-                   echo "maven build"
+                   echo "maven build run version 2"
                    mvn -B -DskipTests clean package
                    '''
                    }
