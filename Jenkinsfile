@@ -7,13 +7,13 @@ podTemplate(containers: [
      )
    ],
    
-   volumes: [
-    persistentVolumeClaim(
-      mountPath: '/root/.m2/repository', 
-      claimName: 'jenkins-pv-claim', 
-      readOnly: false
-      )
-   ]) 
+ #  volumes: [
+ #   persistentVolumeClaim(
+ #     mountPath: '/root/.m2/repository', 
+ #     claimName: 'jenkins-pv-claim', 
+ #     readOnly: false
+ #     )
+ #  ]) 
    
    {
    node(POD_LABEL) {
@@ -22,7 +22,7 @@ podTemplate(containers: [
            container('maven') {
                stage('Build a Maven project') {
                    sh '''
-                   echo "maven build run version 2"
+                   echo "maven build run rebuild version"
                    mvn -B -DskipTests clean package
                    '''
                    }
