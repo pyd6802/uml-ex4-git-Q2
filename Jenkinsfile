@@ -7,7 +7,6 @@ podTemplate(containers: [
      )
    ],
    
-   
    {
    node(POD_LABEL) {
        stage('Get a Maven project') {
@@ -22,4 +21,3 @@ podTemplate(containers: [
             }
        }
     }
- }
