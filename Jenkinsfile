@@ -15,7 +15,7 @@ podTemplate(containers: [
            container('maven') {
                stage('Build a Maven project') {
                    sh '''
-                   echo "maven build run rebuild version"
+                   echo "maven build run rebuild version - no working directory stored"
                    mvn -B -DskipTests clean package
                    '''
                    }
